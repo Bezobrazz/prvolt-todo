@@ -6,7 +6,9 @@ function App() {
     <>
       <div className="h-screen p-10 flex items-center flex-col">
         <Input />
-        <h2 className="text-center mb-3">This is you ToDo list</h2>
+        <h1 className="text-center text-xl font-bold mb-3 text-gray-500">
+          This is you ToDo list
+        </h1>
         <List />
       </div>
     </>

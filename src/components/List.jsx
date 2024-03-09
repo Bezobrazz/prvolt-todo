@@ -1,3 +1,4 @@
+import { BsTrashFill } from "react-icons/bs";
 import { selectTodos } from "../redux/selectors.jsx";
 import { useSelector } from "react-redux";
 import { nanoid } from "nanoid";
@@ -6,16 +7,26 @@ const List = () => {
   const todos = useSelector(selectTodos);
 
   return (
-    <ul className="w-full border rounded-md p-2 h-1/2 overflow-y-auto">
+    <ul className="w-full border rounded-md p-4 h-1/2 overflow-y-auto">
+      {todos.length === 0 && (
+        <li className="text-4xl text-center text-gray-300 flex justify-center items-center h-full">
+          <p>add something to see the list</p>
+        </li>
+      )}
       {todos
         .slice(0)
         .reverse()
         .map((todo) => (
           <li
             key={nanoid()}
-            className="border rounded-lg p-2 bg-yellow-100 mb-2"
+            className="border rounded-lg pl-4 pr-2 py-2 bg-slate-50 mb-2"
           >
-            <p>{todo}</p>
+            <div className="flex justify-between items-center">
+              <p className="text-gray-500">{todo}</p>
+              <div className="cursor-pointer p-2 border border-transparent transition hover:border-gray-300 hover:bg-red-300 rounded-md hover:text-red-500">
+                <BsTrashFill />{" "}
+              </div>
+            </div>
           </li>
         ))}
     </ul>
