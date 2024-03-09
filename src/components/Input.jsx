@@ -13,7 +13,7 @@ const Input = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text.trim()) return;
-    dispatch(addTodo({ id: Date.now(), text }));
+    dispatch(addTodo(text));
     setText("");
   };
   return (

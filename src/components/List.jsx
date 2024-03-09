@@ -1,14 +1,17 @@
+import { selectTodos } from "../redux/selectors.jsx";
+import { useSelector } from "react-redux";
+import { nanoid } from "nanoid";
+
 const List = () => {
+  const todos = useSelector(selectTodos);
+
   return (
     <ul className="w-full border rounded-md p-2 h-1/2 ">
-      <li className="border rounded-sm p-2 bg-yellow-100">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta unde,
-          fugit voluptatum tempore ab officiis perspiciatis totam obcaecati
-          distinctio quae aut aperiam rem quasi rerum consequuntur, placeat
-          ullam numquam eaque.
-        </p>
-      </li>
+      {todos.map((todo) => (
+        <li key={nanoid()} className="border rounded-lg p-2 bg-yellow-100 mb-2">
+          <p>{todo}</p>
+        </li>
+      ))}
     </ul>
   );
 };
