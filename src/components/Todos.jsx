@@ -11,8 +11,10 @@ const Todos = () => {
     dispatch(removeTodo(id));
   };
 
-  const handleToggleTodo = (id) => {
-    dispatch(toggleTodo(id));
+  const handleToggleTodo = (e, id) => {
+    if (e.target !== e.currentTarget) {
+      dispatch(toggleTodo(id));
+    }
   };
   return (
     <>
@@ -21,7 +23,7 @@ const Todos = () => {
         .reverse()
         .map((todo) => (
           <li
-            onClick={() => handleToggleTodo(todo.id)}
+            onClick={(e) => handleToggleTodo(e, todo.id)}
             key={todo.id}
             className={`border rounded-lg pl-4 pr-2 py-2 active:scale-95 ${
               todo.completed
