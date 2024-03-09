@@ -1,20 +1,15 @@
 const List = () => {
   return (
-    <div className="overflow-x-auto">
-      <table className="table table-zebra">
-        {/* head */}
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody>
-          {/* row 1 */}
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton олдлоцждлокждлфоижадлоп ллоидлвоа</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <ul className="w-full border rounded-md p-2 h-1/2 ">
+      <li className="border rounded-sm p-2 bg-yellow-100">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta unde,
+          fugit voluptatum tempore ab officiis perspiciatis totam obcaecati
+          distinctio quae aut aperiam rem quasi rerum consequuntur, placeat
+          ullam numquam eaque.
+        </p>
+      </li>
+    </ul>
   );
 };
 
