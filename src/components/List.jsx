@@ -1,11 +1,16 @@
 import { BsTrashFill } from "react-icons/bs";
 import { selectTodos } from "../redux/selectors.jsx";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeTodo } from "../redux/todoSlice.jsx";
 import { nanoid } from "nanoid";
 
 const List = () => {
   const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
 
+  const handleRemoveTodo = (id) => {
+    dispatch(removeTodo(id));
+  };
   return (
     <ul className="w-full border rounded-md p-4 h-1/2 overflow-y-auto">
       {todos.length === 0 && (
@@ -23,9 +28,12 @@ const List = () => {
           >
             <div className="flex justify-between items-center">
               <p className="text-gray-500">{todo}</p>
-              <div className="cursor-pointer p-2 border border-transparent transition hover:border-gray-300 hover:bg-red-300 rounded-md hover:text-red-500">
+              <button
+                onClick={() => handleRemoveTodo(todo.id)}
+                className="cursor-pointer p-2 border border-transparent transition hover:border-red-300 hover:bg-red-300 rounded-md hover:text-red-500"
+              >
                 <BsTrashFill />{" "}
-              </div>
+              </button>
             </div>
           </li>
         ))}
