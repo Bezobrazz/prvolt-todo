@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 const initialState = {
   todos: [],
-  visibilityFilter: "all",
+  visibilityFilter: "All",
 };
 
 const todoSlice = createSlice({

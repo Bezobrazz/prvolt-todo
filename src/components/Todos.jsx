@@ -1,4 +1,3 @@
-import { BsTrashFill } from "react-icons/bs";
 import { selectTodos, selectVisibilityFilter } from "../redux/selectors.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { removeTodo, toggleTodo } from "../redux/todoSlice.jsx";
@@ -20,9 +19,9 @@ const Todos = () => {
 
   const filteredTodos = () => {
     switch (visibilityFilter) {
-      case "completed":
+      case "Completed":
         return todos.filter((todo) => todo.completed);
-      case "current":
+      case "Current":
         return todos.filter((todo) => !todo.completed);
       default:
         return todos;
@@ -36,7 +35,9 @@ const Todos = () => {
           key={todo.id}
           className={`border rounded-lg pl-4 pr-2 py-2 active:scale-95 ${
             todo.completed
-              ? "bg-green-50 hover:bg-green-100"
+              ? // ? "bg-green-50 hover:bg-green-100"
+                // : "bg-slate-50 hover:bg-slate-100"
+                "bg-primary hover:bg-violet-500"
               : "bg-slate-50 hover:bg-slate-100"
           } mb-2 cursor-pointer transition `}
         >
