@@ -3,19 +3,26 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/todoSlice";
 
 const Input = () => {
-  const [text, setText] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
-    setText(e.target.value);
+    const value = e.target.value;
+    setInputValue(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text.trim()) return;
-    dispatch(addTodo(text));
-    setText("");
+    if (inputValue.trim().length < 3) {
+      setError("Input value must be at least 3 characters long");
+      return;
+    }
+    dispatch(addTodo(inputValue));
+    setInputValue("");
+    setError("");
   };
+
   return (
     <div className="w-full gap-2">
       <form
@@ -23,13 +30,14 @@ const Input = () => {
         className="flex flex-wrap justify-center w-full gap-2 sm:justify-center sm:flex sm:flex-row mb-10"
       >
         <input
-          value={text}
+          value={inputValue}
           type="text"
-          placeholder="Type here you ToDo"
+          placeholder="Type here your ToDo"
           className="input border input-bordered w-full max-w-xs "
           onChange={handleInput}
         />
         <button className="btn btn-primary">Add ToDo</button>
+        {error && <p className="text-red-500 text-center">{error}</p>}
       </form>
     </div>
   );
