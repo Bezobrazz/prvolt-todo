@@ -27,8 +27,13 @@ const Input = () => {
     <div className="w-full gap-2">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-wrap justify-center w-full gap-2 sm:justify-center sm:flex sm:flex-row mb-10"
+        className="flex flex-wrap justify-center w-full gap-2 sm:justify-center sm:flex sm:flex-row mb-10 relative"
       >
+        {error && (
+          <p className="text-red-500 text-center text-sm absolute top-[-30px] ">
+            {error}
+          </p>
+        )}
         <input
           value={inputValue}
           type="text"
@@ -37,7 +42,6 @@ const Input = () => {
           onChange={handleInput}
         />
         <button className="btn btn-primary">Add ToDo</button>
-        {error && <p className="text-red-500 text-center">{error}</p>}
       </form>
     </div>
   );

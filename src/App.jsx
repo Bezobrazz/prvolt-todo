@@ -6,7 +6,7 @@ import Counter from "./components/Counter.jsx";
 function App() {
   return (
     <>
-      <div className="p-2 py-4 h-screen sm:p-10 flex items-center flex-col">
+      <div className="p-2 py-4 h-screen sm:p-10 flex items-center justify-center flex-col">
         <Input />
         <h1 className="text-center text-xl font-bold mb-3 text-gray-500">
           This is you ToDo list
