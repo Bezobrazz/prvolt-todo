@@ -14,7 +14,7 @@ const Filter = () => {
   };
 
   return (
-    <details ref={detailsRef} className="dropdown mb-2">
+    <details ref={detailsRef} className="dropdown ">
       <summary className="m-1 btn">{selectedFilter || "ToDo Filter"}</summary>
       <ul className="px-2  shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
         <li>
