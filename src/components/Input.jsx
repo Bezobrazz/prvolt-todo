@@ -29,7 +29,7 @@ const Input = () => {
           className="input border input-bordered w-full max-w-xs "
           onChange={handleInput}
         />
-        <button className="btn btn-primary">Add To Do</button>
+        <button className="btn btn-primary">Add ToDo</button>
       </form>
     </div>
   );

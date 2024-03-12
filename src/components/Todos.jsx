@@ -49,7 +49,7 @@ const Todos = () => {
             </p>
             <button
               onClick={() => handleRemoveTodo(todo.id)}
-              className="text-gray-500 cursor-pointer p-2 border border-transparent transition hover:border-red-300 hover:bg-red-300 rounded-md hover:text-red-500"
+              className="text-gray-500 text-xs cursor-pointer p-2 border border-transparent transition hover:border-red-300 hover:bg-red-300 rounded-md hover:text-red-500 sm:text-base"
             >
               Delete
             </button>
