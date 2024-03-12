@@ -20,13 +20,13 @@ const Input = () => {
     <div className="w-full gap-2">
       <form
         onSubmit={handleSubmit}
-        className="flex w-full gap-2 justify-center"
+        className="flex flex-wrap justify-center w-full gap-2 sm:justify-center sm:flex sm:flex-row mb-10"
       >
         <input
           value={text}
           type="text"
           placeholder="Type here you ToDo"
-          className="input border input-bordered w-full max-w-xs mb-10"
+          className="input border input-bordered w-full max-w-xs "
           onChange={handleInput}
         />
         <button className="btn btn-primary">Add To Do</button>

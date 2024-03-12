@@ -35,9 +35,7 @@ const Todos = () => {
           key={todo.id}
           className={`border rounded-lg pl-4 pr-2 py-2 active:scale-95 ${
             todo.completed
-              ? // ? "bg-green-50 hover:bg-green-100"
-                // : "bg-slate-50 hover:bg-slate-100"
-                "bg-primary hover:bg-violet-500"
+              ? "bg-green-50 hover:bg-green-100"
               : "bg-slate-50 hover:bg-slate-100"
           } mb-2 cursor-pointer transition `}
         >
@@ -54,7 +52,6 @@ const Todos = () => {
               className="text-gray-500 cursor-pointer p-2 border border-transparent transition hover:border-red-300 hover:bg-red-300 rounded-md hover:text-red-500"
             >
               Delete
-              {/* <BsTrashFill />{" "} */}
             </button>
           </div>
         </li>
